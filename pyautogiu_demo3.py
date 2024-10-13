@@ -3,6 +3,9 @@ from pynput import keyboard
 
 
 def on_press(key):
+    if key == keyboard.Key.esc:
+        print("end")  # 如果按下的是Esc键，则停止监听
+        return False
     if key == keyboard.KeyCode(char='p'):  # 如果按下的是'p'键
         print('你按下了"p"键！')
         print("即将开始工作")
